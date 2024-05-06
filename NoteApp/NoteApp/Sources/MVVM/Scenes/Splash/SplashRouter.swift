@@ -13,14 +13,14 @@ enum SplashRoutingIdentifier: String {
 }
 
 protocol SplashRoutingLogic {
-    func router(identifier: SplashRoutingIdentifier)
+    func route(identifier: SplashRoutingIdentifier)
 }
 
 class SplashRouter: NSObject, SplashRoutingLogic {
     weak var viewController: SplashViewController?
     var destinationVC: UIViewController?
 
-    func router(identifier: SplashRoutingIdentifier) {
+    func route(identifier: SplashRoutingIdentifier) {
         guard let viewController = self.viewController else {
             return
         }

@@ -13,7 +13,7 @@ protocol DashboardViewControllerProtocol: AnyObject {
 }
 
 class DashboardViewController: BaseViewController {
-    
+    private var router = DashboardRouter()
     private let tableView = UITableView()
     private let dashboardTableView = DashboardTableView()
     private let dashboardViewModel = DashboardViewModel()
@@ -25,15 +25,26 @@ class DashboardViewController: BaseViewController {
     }
     
     private func setup() {
+        router.viewController = self
         dashboardViewModel.delegate = self
         setupUI()
         configureTableView()
+    }
+    
+    @objc func addButtonTapped() {
+        router.route(identifier: .addEditViewController)
     }
 }
 
 extension DashboardViewController: DashboardTableViewOutput {
     func onSelected(item: DashboardModel) {
         print("Selected Item : ", item)
+        router.route(identifier: .detailViewController)
+    }
+    
+    func onEdit(item: DashboardModel) {
+        router.passEditData(editData: item)
+        router.route(identifier: .addEditViewController)
     }
 }
 
@@ -59,6 +70,12 @@ extension DashboardViewController {
     
     private func setupUI() {
         makeTableView()
+        makeNavigationTabBar()
+    }
+    
+    private func makeNavigationTabBar() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = addButton
     }
     
     private func makeTableView() {

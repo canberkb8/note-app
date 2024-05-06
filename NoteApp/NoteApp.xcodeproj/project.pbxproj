@@ -16,6 +16,9 @@
 		049C396E2BE522EF001CDC3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049C39342BE51D3F001CDC3E /* Main.storyboard */; };
 		049C396F2BE522F1001CDC3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049C39392BE51D40001CDC3E /* LaunchScreen.storyboard */; };
 		049C39702BE522F3001CDC3E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049C39372BE51D40001CDC3E /* Assets.xcassets */; };
+		049C39752BE9120E001CDC3E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C39742BE9120E001CDC3E /* DetailViewController.swift */; };
+		049C39772BE915EE001CDC3E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C39762BE915EE001CDC3E /* UIColor.swift */; };
+		049C397A2BE919FC001CDC3E /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C39792BE919FC001CDC3E /* AddEditViewController.swift */; };
 		4DC1FE3C2BE7D134007D9B4C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1FE3B2BE7D134007D9B4C /* DashboardViewController.swift */; };
 		4DC1FE3E2BE7D154007D9B4C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1FE3D2BE7D154007D9B4C /* BaseViewController.swift */; };
 		4DC1FE402BE7D192007D9B4C /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC1FE3F2BE7D192007D9B4C /* DashboardViewModel.swift */; };
@@ -57,6 +60,9 @@
 		049C394B2BE51D41001CDC3E /* NoteAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		049C394F2BE51D41001CDC3E /* NoteAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppUITests.swift; sourceTree = "<group>"; };
 		049C39512BE51D41001CDC3E /* NoteAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		049C39742BE9120E001CDC3E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		049C39762BE915EE001CDC3E /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		049C39792BE919FC001CDC3E /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
 		4DC1FE3B2BE7D134007D9B4C /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		4DC1FE3D2BE7D154007D9B4C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4DC1FE3F2BE7D192007D9B4C /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
@@ -213,6 +219,8 @@
 		049C39672BE51EC1001CDC3E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				049C39782BE919E3001CDC3E /* AddEdit */,
+				049C39732BE911DC001CDC3E /* Detail */,
 				049C396A2BE51EDB001CDC3E /* Dashboard */,
 				049C39692BE51ED7001CDC3E /* Splash */,
 				049C39682BE51ED2001CDC3E /* Login */,
@@ -248,6 +256,22 @@
 			path = Dashboard;
 			sourceTree = "<group>";
 		};
+		049C39732BE911DC001CDC3E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				049C39742BE9120E001CDC3E /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		049C39782BE919E3001CDC3E /* AddEdit */ = {
+			isa = PBXGroup;
+			children = (
+				049C39792BE919FC001CDC3E /* AddEditViewController.swift */,
+			);
+			path = AddEdit;
+			sourceTree = "<group>";
+		};
 		4DC1FE432BE7D1BE007D9B4C /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				4DC1FE4D2BE7DF8D007D9B4C /* DispatchQueue.swift */,
+				049C39762BE915EE001CDC3E /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,11 +438,14 @@
 				4DC1FE3E2BE7D154007D9B4C /* BaseViewController.swift in Sources */,
 				4DC1FE472BE7D2E1007D9B4C /* DashboardModel.swift in Sources */,
 				049C39332BE51D3F001CDC3E /* SplashViewController.swift in Sources */,
+				049C39752BE9120E001CDC3E /* DetailViewController.swift in Sources */,
 				4DC1FE4E2BE7DF8D007D9B4C /* DispatchQueue.swift in Sources */,
 				049C392F2BE51D3F001CDC3E /* AppDelegate.swift in Sources */,
 				4DC1FE422BE7D1A5007D9B4C /* DashboardRouter.swift in Sources */,
 				4DC1FE402BE7D192007D9B4C /* DashboardViewModel.swift in Sources */,
+				049C397A2BE919FC001CDC3E /* AddEditViewController.swift in Sources */,
 				049C39312BE51D3F001CDC3E /* SceneDelegate.swift in Sources */,
+				049C39772BE915EE001CDC3E /* UIColor.swift in Sources */,
 				4DC1FE452BE7D23F007D9B4C /* DashboardTableView.swift in Sources */,
 				4DC1FE502BE7E9A3007D9B4C /* SplashRouter.swift in Sources */,
 				4DC1FE3C2BE7D134007D9B4C /* DashboardViewController.swift in Sources */,

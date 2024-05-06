@@ -54,7 +54,7 @@ extension SplashViewController {
         } completion: { [weak self] _ in
             guard let self = self else { return }
             DispatchQueue.background(delay: 1.0, completion:{
-                self.router.router(identifier: .dashboardViewController)
+                self.router.route(identifier: .dashboardViewController)
             })
         }
     }

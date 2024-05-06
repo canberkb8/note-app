@@ -13,6 +13,7 @@ protocol DashboardTableViewProtocol {
 
 protocol DashboardTableViewOutput: AnyObject {
     func onSelected(item: DashboardModel)
+    func onEdit(item: DashboardModel)
 }
 
 final class DashboardTableView: NSObject {
@@ -34,11 +35,33 @@ final class DashboardTableView: NSObject {
         delegate?.onSelected(item: itemList[indexPath.row])
     }
     
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .default, title: "Remove") { [weak self] (_, indexPath) in
+            guard let self = self else { return }
+            self.removeItem(at: indexPath)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        deleteAction.backgroundColor = UIColor(rgb: 0xf16a6f)
+        let editAction = UITableViewRowAction(style: .default, title: "Edit") { [weak self] (_, indexPath) in
+            guard let self = self else { return }
+            self.delegate?.onEdit(item: itemList[indexPath.row])
+        }
+        editAction.backgroundColor = UIColor(rgb: 0xf8b014)
+        return [deleteAction, editAction]
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 }
 
 extension DashboardTableView: UITableViewDelegate, UITableViewDataSource { }
 extension DashboardTableView: DashboardTableViewProtocol {
-    func update(newItemList:[DashboardModel]){
+    func update(newItemList: [DashboardModel]) {
         self.itemList = newItemList
+    }
+    
+    func removeItem(at indexPath: IndexPath) {
+        self.itemList.remove(at: indexPath.row)
     }
 }
